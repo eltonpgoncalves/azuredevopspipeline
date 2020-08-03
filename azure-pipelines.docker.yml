@@ -34,9 +34,3 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: |
     $(Build.BuildId)
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Artifact 01'
-    publishLocation: 'Container'

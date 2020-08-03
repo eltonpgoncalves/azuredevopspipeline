@@ -32,7 +32,7 @@ steps:
     repository: 'eltonpontes/eltonpontes-devops'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags:
+    tags: |
     $(Build.BuildId)
 
 - task: PublishBuildArtifacts@1

@@ -26,6 +26,14 @@ steps:
     docker login -u $(dockerId) -p $(dockerPassword)
     docker push $(dockerId)/$(imageName)
   displayName: 'Sending to Docker Hub'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker Hub'
+    repository: 'eltonpontes/eltonpontes-devops'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags:
+    $(Build.BuildId)
 
 - task: PublishBuildArtifacts@1
   inputs:

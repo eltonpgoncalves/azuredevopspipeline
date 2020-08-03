@@ -27,3 +27,8 @@ steps:
     docker push $(dockerId)/$(imageName)
   displayName: 'Sending Image to Docker Hub'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'Artifact 01'
+    publishLocation: 'Container'
